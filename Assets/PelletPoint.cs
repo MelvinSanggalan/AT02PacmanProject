@@ -7,6 +7,7 @@ public class PelletPoint : MonoBehaviour
 {
     public Text textRef;
     public int scoreValue = 5;
+    public AudioSource soundEffect;
 
     //The value of a static variable is shared between all instance
     //of a class. In this case, all instances oif the ScoreTrigger script
@@ -20,8 +21,8 @@ public class PelletPoint : MonoBehaviour
             currentScore = 0;
         }
         textRef.text = "Score : " + currentScore;
-
     }
+
 
     /// <summary>
     /// OnTriggerEnter is called on the frame when a foreign collider enters this collider.
@@ -31,6 +32,7 @@ public class PelletPoint : MonoBehaviour
     {
         if (other.CompareTag("Player") == true)
         {
+            soundEffect.Play();
             currentScore += scoreValue;
             textRef.text = "Score : " + currentScore;
             gameObject.SetActive(false);
