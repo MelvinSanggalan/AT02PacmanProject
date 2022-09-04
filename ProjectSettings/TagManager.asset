@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Teleporter
+  - Bonus Item
+  - Pellet
+  - Power Pellet
   layers:
   - Default
   - TransparentFX
