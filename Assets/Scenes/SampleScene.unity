@@ -16784,7 +16784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fleeMaterial: {fileID: 2100000, guid: 98a8d5c16d246934382d62a9a8814c4a, type: 2}
-  respawnMaterial: {fileID: 2100000, guid: 98a8d5c16d246934382d62a9a8814c4a, type: 2}
+  respawnMaterial: {fileID: 2100000, guid: 2893ba2bbc19bae4fb577e8d1587398a, type: 2}
 --- !u!114 &1380219532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21883,7 +21883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fleeMaterial: {fileID: 2100000, guid: 98a8d5c16d246934382d62a9a8814c4a, type: 2}
-  respawnMaterial: {fileID: 2100000, guid: 98a8d5c16d246934382d62a9a8814c4a, type: 2}
+  respawnMaterial: {fileID: 2100000, guid: 2893ba2bbc19bae4fb577e8d1587398a, type: 2}
   behaviourSwitchTime: {x: 5, y: 30}
 --- !u!114 &1814904441
 MonoBehaviour:
