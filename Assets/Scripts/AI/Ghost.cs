@@ -28,8 +28,12 @@ public abstract class Ghost : MonoBehaviour
         TryGetComponent(out MeshRenderer renderer);
         if (renderer != null)
         {
-            GhostRenderer = renderer;
+            //GhostRenderer = renderer;
+            //DefaultMaterial = GhostRenderer.material;
+            GhostRenderer = gameObject.transform.Find("Mesh").GetComponent<MeshRenderer>();
             DefaultMaterial = GhostRenderer.material;
+
+
         }
         else
         {
