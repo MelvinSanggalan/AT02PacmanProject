@@ -9,6 +9,7 @@ TagManager:
   - Pellet
   - Power Pellet
   - Ghost
+  - LockedCamera
   layers:
   - Default
   - TransparentFX
