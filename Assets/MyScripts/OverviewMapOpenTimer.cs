@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OverviewMapTimer : MonoBehaviour
+public class OverviewMapOpenTimer : MonoBehaviour
 {
     float currentTime = 0f;
     float startingTime = 5f;
-    public bool isRunning = false;
+    public bool isOpen = false;
 
     public Text timerText;
 
@@ -19,7 +19,7 @@ public class OverviewMapTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isRunning)
+        if (isOpen)
         {
             currentTime -= 1 * Time.deltaTime;
             timerText.text = currentTime.ToString("0");
@@ -27,7 +27,7 @@ public class OverviewMapTimer : MonoBehaviour
             if (currentTime <= 0)
             {
                 currentTime = 0;
-                timerText.text = "E";
+                timerText.text = "5";
                 currentTime = 5;
             }
 

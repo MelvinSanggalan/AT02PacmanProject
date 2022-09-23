@@ -6,16 +6,18 @@ public class OverviewMapToggleNew : MonoBehaviour
 {
     public GameObject overviewMap;
     float uptimeDuration = 5f;
-    float cooldownDuration = 10f;
+    float cooldownDuration = 5f;
     bool isCooldown = false;
 
     public OverviewMapTimer overviewMapTimer;
+    public OverviewMapOpenTimer overviewMapOpenTimer;
 
 
     void Start()
     {
         overviewMap.SetActive(false);
         overviewMapTimer = GetComponent<OverviewMapTimer>();
+        overviewMapOpenTimer = overviewMap.GetComponent<OverviewMapOpenTimer>();
         
     }
 
@@ -35,8 +37,10 @@ public class OverviewMapToggleNew : MonoBehaviour
     IEnumerator Cooldown()
     {
         overviewMap.SetActive(true);
+        overviewMapOpenTimer.isOpen = true;
         yield return new WaitForSeconds(uptimeDuration);
         overviewMap.SetActive(false);
+        overviewMapOpenTimer.isOpen = false;
         overviewMapTimer.isRunning = true;
 
         yield return new WaitForSeconds(cooldownDuration);

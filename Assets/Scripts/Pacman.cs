@@ -142,10 +142,18 @@ public class Pacman : MonoBehaviour
             case "Pellet":
                 GameManager.Instance.PickUpPellet(1);
                 other.gameObject.SetActive(false);
+
+                //Get pellet ParticleEmitter
+                Transform pelletParticle = transform.GetChild(2);
+                pelletParticle.GetComponent<ParticleSystem>().Play();
                 break;
             case "Power Pellet":
                 GameManager.Instance.PickUpPellet(1, 1);
                 other.gameObject.SetActive(false);
+
+                //Get power pellet ParticleEmitter
+                Transform powerPelletParticle = transform.GetChild(3);
+                powerPelletParticle.GetComponent<ParticleSystem>().Play();
                 break;
             case "Bonus Item":
                 GameManager.Instance.PickUpPellet(50, 2);
