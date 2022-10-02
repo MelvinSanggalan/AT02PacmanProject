@@ -11,6 +11,8 @@ public class Pacman : MonoBehaviour
     [SerializeField] private Transform pacmanSpawn;
     [SerializeField] private GameObject[] lifeIcons;
     [SerializeField] private AudioClip deathClip;
+    [SerializeField] private AudioClip finalDeathClip;
+    [SerializeField] private AudioClip backgroundMusic;
 
     //Private variables
     private int currentLives = 0;
@@ -18,6 +20,9 @@ public class Pacman : MonoBehaviour
     private Vector2 input;
     private CharacterController controller;
     private AudioSource aSrc;
+
+    private AudioSource musicasRc;
+
 
     /// <summary>
     /// Creates necessary references.
@@ -58,6 +63,7 @@ public class Pacman : MonoBehaviour
         {
             Debug.LogError("Pacman: Collider with 'isTrigger' set to true is required.");
         }
+        musicasRc = transform.GetChild(0).GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -83,6 +89,10 @@ public class Pacman : MonoBehaviour
         }
         //Victory method assigned to event
         GameManager.Instance.Event_GameVictory += delegate { enabled = false; };
+
+        musicasRc.clip = backgroundMusic;
+        musicasRc.Play();
+
     }
 
     /// <summary>
@@ -223,6 +233,7 @@ public class Pacman : MonoBehaviour
             {
                 enabled = false;
                 GameManager.Instance.Delegate_GameOver.Invoke();
+                aSrc.PlayOneShot(finalDeathClip);
                 return true;
             }
         }
