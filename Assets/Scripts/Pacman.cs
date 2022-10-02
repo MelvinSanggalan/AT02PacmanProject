@@ -152,12 +152,22 @@ public class Pacman : MonoBehaviour
                 other.gameObject.SetActive(false);
 
                 //Get power pellet ParticleEmitter
-                Transform powerPelletParticle = transform.GetChild(3);
-                powerPelletParticle.GetComponent<ParticleSystem>().Play();
+                Transform powerParticle = transform.GetChild(3);
+                powerParticle.GetComponent<ParticleSystem>().Play();
+                Transform powerParticle2 = transform.GetChild(4);
+                powerParticle2.GetComponent<ParticleSystem>().Play();
+                Transform powerParticle3 = transform.GetChild(5);
+                powerParticle3.GetComponent<ParticleSystem>().Play();
+                Transform powerParticle4 = transform.GetChild(6);
+                powerParticle4.GetComponent<ParticleSystem>().Play();
                 break;
             case "Bonus Item":
                 GameManager.Instance.PickUpPellet(50, 2);
                 other.gameObject.SetActive(false);
+
+                Transform bonusParticle = transform.GetChild(7);
+                bonusParticle.GetComponent<ParticleSystem>().Play();
+
                 break;
             case "Ghost":
                 if (GameManager.Instance.PowerUpTimer > -1)
